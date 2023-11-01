@@ -8,7 +8,9 @@
 		"axialeaa"
 	],
 	"contact": {
-		"sources": "https://github.com/axialeaa/PickMoreBlocks"
+		"homepage": "https://modrinth.com/mod/pickmoreblocks",
+		"sources": "https://github.com/axialeaa/PickMoreBlocks",
+		"issues": "https://github.com/axialeaa/PickMoreBlocks/issues"
 	},
 	"license": "LGPLv3",
 	"icon": "assets/pickmoreblocks/icon.png",
