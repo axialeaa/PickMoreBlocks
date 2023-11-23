@@ -25,36 +25,21 @@ If you have neither flint and steel nor a fire charge in your creative mode inve
   </summary>
   <blockquote>
 
-    @Mixin(Block.class)
-    public abstract class BlockMixin implements BlockPickInteractionAware {
+    public class CustomPickLogic {
 
-        @Override
-        public ItemStack getPickedStack(BlockState state, BlockView view, BlockPos pos, PlayerEntity player, HitResult result) {
-            if (state.getBlock() instanceof AbstractFireBlock || state.getBlock() instanceof NetherPortalBlock) {
-            
-if the block is fire or a nether portal...
-                
-                for (int i = 0; i < player.getInventory().size(); i++) {
-                    ItemStack getStackAtSlot = player.getInventory().getStack(i);
-                    
-iteratively check every slot in the player's inventory
-                    
-                    if (getStackAtSlot.isOf(Items.FLINT_AND_STEEL) || getStackAtSlot.isOf(Items.FIRE_CHARGE)) {
-                        return getStackAtSlot;
-                        
-if the slot contains flint and steel or (at a lower priority) a fire charge, swap it with the mainhand slot...
-                        
-                    }
-                }
-                return new ItemStack(Items.FLINT_AND_STEEL);
-                
-or if neither can be found, give the player a new flint and steel (creative mode)
-                
+        public static ItemStack onPickFire(PlayerEntity player) {
+            for (int i = 0; i < player.getInventory().size(); i++) {
+                ItemStack getStackAtSlot = player.getInventory().getStack(i);
+Iteratively check every slot in the player's inventory.
+
+                if (getStackAtSlot.isOf(Items.FLINT_AND_STEEL) || getStackAtSlot.isOf(Items.FIRE_CHARGE))
+                    return getStackAtSlot;
+If the slot contains flint and steel or (at a lower priority) a fire charge, swap it with the mainhand slot...
+
             }
-            return state.getBlock().getPickStack(player.getEntityWorld(), pos, state);
-            
-if the block is neither fire nor a nether portal, attempt vanilla pickblock functionality
-            
+            return new ItemStack(Items.FLINT_AND_STEEL);
+...or if neither can be found, try to give the player a new flint and steel (fails outside of creative mode)!
+
         }
 
     }
