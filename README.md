@@ -1,6 +1,9 @@
 # Hi there! Thank you for checking out PickMoreBlocks!
 <img align="right" width="130" src="src/main/resources/assets/pickmoreblocks/icon.png">
 
+[![GitHub downloads](https://img.shields.io/github/downloads/axialeaa/PickMoreBlocks/total?label=Github%20downloads&logo=github)](https://github.com/axialeaa/PickMoreBlocks/releases)
+[![Modrinth downloads](https://img.shields.io/modrinth/dt/pickmoreblocks?label=Modrinth%20downloads&logo=modrinth)](https://modrinth.com/mod/pickmoreblocks)
+
 PickMoreBlocks is a client-side [Fabric](https://fabricmc.net) mod that attempts to fix what I believe to be small gaps in the vanilla middle mouse click functionality, making the creative and survival experience _that little bit smoother_!
 
 Read on to find out how to download this mod, and what opportunities doing so will provide you with!
@@ -25,36 +28,21 @@ If you have neither flint and steel nor a fire charge in your creative mode inve
   </summary>
   <blockquote>
 
-    @Mixin(Block.class)
-    public abstract class BlockMixin implements BlockPickInteractionAware {
+    public class CustomPickLogic {
 
-        @Override
-        public ItemStack getPickedStack(BlockState state, BlockView view, BlockPos pos, PlayerEntity player, HitResult result) {
-            if (state.getBlock() instanceof AbstractFireBlock || state.getBlock() instanceof NetherPortalBlock) {
-            
-if the block is fire or a nether portal...
-                
-                for (int i = 0; i < player.getInventory().size(); i++) {
-                    ItemStack getStackAtSlot = player.getInventory().getStack(i);
-                    
-iteratively check every slot in the player's inventory
-                    
-                    if (getStackAtSlot.isOf(Items.FLINT_AND_STEEL) || getStackAtSlot.isOf(Items.FIRE_CHARGE)) {
-                        return getStackAtSlot;
-                        
-if the slot contains flint and steel or (at a lower priority) a fire charge, swap it with the mainhand slot...
-                        
-                    }
-                }
-                return new ItemStack(Items.FLINT_AND_STEEL);
-                
-or if neither can be found, give the player a new flint and steel (creative mode)
-                
+        public static ItemStack onPickFire(PlayerEntity player) {
+            for (int i = 0; i < player.getInventory().size(); i++) {
+                ItemStack getStackAtSlot = player.getInventory().getStack(i);
+Iteratively check every slot in the player's inventory.
+
+                if (getStackAtSlot.isOf(Items.FLINT_AND_STEEL) || getStackAtSlot.isOf(Items.FIRE_CHARGE))
+                    return getStackAtSlot;
+If the slot contains flint and steel or (at a lower priority) a fire charge, swap it with the mainhand slot...
+
             }
-            return state.getBlock().getPickStack(player.getEntityWorld(), pos, state);
-            
-if the block is neither fire nor a nether portal, attempt vanilla pickblock functionality
-            
+            return new ItemStack(Items.FLINT_AND_STEEL);
+...or if neither can be found, try to give the player a new flint and steel (fails outside of creative mode)!
+
         }
 
     }
