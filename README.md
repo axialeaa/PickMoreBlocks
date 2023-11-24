@@ -1,6 +1,9 @@
 # Hi there! Thank you for checking out PickMoreBlocks!
 <img align="right" width="130" src="src/main/resources/assets/pickmoreblocks/icon.png">
 
+[![GitHub downloads](https://img.shields.io/github/downloads/axialeaa/PickMoreBlocks/total?label=Github%20downloads&logo=github)](https://github.com/axialeaa/PickMoreBlocks/releases)
+[![Modrinth downloads](https://img.shields.io/modrinth/dt/pickmoreblocks?label=Modrinth%20downloads&logo=modrinth)](https://modrinth.com/mod/pickmoreblocks)
+
 PickMoreBlocks is a client-side [Fabric](https://fabricmc.net) mod that attempts to fix what I believe to be small gaps in the vanilla middle mouse click functionality, making the creative and survival experience _that little bit smoother_!
 
 Read on to find out how to download this mod, and what opportunities doing so will provide you with!
