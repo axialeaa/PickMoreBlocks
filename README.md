@@ -8,7 +8,7 @@
 ***
 
 ### Getting Started
-Due to the use of `BlockPickInteractionAware` and `EntityPickInteractionAware` interfaces to make this mod compact, you will need to download [Fabric API](https://github.com/FabricMC/fabric) in order to use it. Once you have, simply drag both the Fabric API and PickMoreBlocks into your mods folder.
+Due to the use of `BlockPickInteractionAware` and `EntityPickInteractionAware` interfaces to make this mod compact, you will need to download [Fabric API](https://github.com/FabricMC/fabric) in order to use it. Once you have, simply drag both the Fabric API and <strong>PickMoreBlocks</strong> into your mods folder.
 
 There is no configuration menu at this stage, since I don't deem the features of this mod to be obvious nor plentiful enough for you to want to disable them. However, if you play on a server, consider contacting your server admin to make sure they don't consider this mod to be a cheat.
 ***
