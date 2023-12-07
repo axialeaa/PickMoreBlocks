@@ -6,9 +6,8 @@
     "defaultRequire": 1
   },
   "client": [
-    "AbstractFireBlockMixin",
+    "AbstractFire_NetherPortalBlockMixin",
     "FallingBlockEntityMixin",
-    "NetherPortalBlockMixin",
     "TntEntityMixin"
   ]
 }

@@ -22,9 +22,15 @@
 			}
 		}
 	},
+	"entrypoints": {
+		"client": [
+			"com.axialeaa.pickmoreblocks.PickMoreBlocks"
+		]
+	},
 	"mixins": [
 		"pickmoreblocks.mixins.json"
 	],
+	"accessWidener": "pickmoreblocks.accesswidener",
 	"depends": {
 		"fabricloader": ">=0.14.24",
 		"minecraft": "~1.20.3",
