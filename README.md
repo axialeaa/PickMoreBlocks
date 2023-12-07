@@ -1,25 +1,27 @@
 # Hi there! Thank you for checking out PickMoreBlocks!
-<img align="right" width="130" src="src/main/resources/assets/pickmoreblocks/icon.png">
+<img align="right" width="120" src="src/main/resources/assets/pickmoreblocks/icon.png">
 
-[![GitHub downloads](https://img.shields.io/github/downloads/axialeaa/PickMoreBlocks/total?label=Github%20downloads&logo=github)](https://github.com/axialeaa/PickMoreBlocks/releases)
-[![Modrinth downloads](https://img.shields.io/modrinth/dt/pickmoreblocks?label=Modrinth%20downloads&logo=modrinth)](https://modrinth.com/mod/pickmoreblocks)
+[![GitHub downloads](https://img.shields.io/github/downloads/axialeaa/PickMoreBlocks/total?label=Github%20downloads&logo=github&style=for-the-badge)](https://github.com/axialeaa/PickMoreBlocks/releases)
+[![Modrinth downloads](https://img.shields.io/modrinth/dt/pickmoreblocks?label=Modrinth%20downloads&logo=modrinth&style=for-the-badge)](https://modrinth.com/mod/pickmoreblocks)
 
-PickMoreBlocks is a client-side [Fabric](https://fabricmc.net) mod that attempts to fix what I believe to be small gaps in the vanilla middle mouse click functionality, making the creative and survival experience _that little bit smoother_!
-
-Read on to find out how to download this mod, and what opportunities doing so will provide you with!
-
-## Getting Started
-Due to the use of `BlockPickInteractionAware` and `EntityPickInteractionAware` interfaces to make this mod compact, you will need to download [Fabric API](https://github.com/FabricMC/fabric) in order to use it. Once you have, simply place both the Fabric API and PickMoreBlocks in your mods folder.
+PickMoreBlocks is a client-side [Fabric](https://fabricmc.net) mod that attempts to fix what I believe to be small gaps in the vanilla middle mouse click functionality, making the creative and survival experience _that little bit smoother_! Currently, it affects the behaviour of falling blocks, TNT, fire, nether portals and liquids, with more to come in the future!
 
 There is no configuration menu at this stage, since I don't deem the features of this mod to be obvious nor plentiful enough for you to want to disable them. However, if you play on a server, consider contacting your server admin to make sure they don't consider this mod to be a cheat.
+***
 
-## Feature List
-### TNT & Gravity-Affected Blocks
+### Getting Started
+Due to the use of `BlockPickInteractionAware` and `EntityPickInteractionAware` interfaces to make this mod compact, you will need to download [Fabric API](https://github.com/FabricMC/fabric) in order to use it. Once you have, simply drag both the Fabric API and PickMoreBlocks into your mods folder.
+***
+
+### Feature List
+#### TNT & Gravity-Affected Blocks
 In vanilla, gravity-affected blocks like sand can only be pickblocked when they are stationary, in block form. PickMoreBlocks fixes this to work with fallingBlock entities too!
 
 For the sake of inclusion, TNT has also been fixed in the same way. I'd imagine this is only really useful for technical players who work with TNT, a group far larger than 0 these days!
-### Fire & Portals
-The most fleshed-out feature in this mod so far, fire and portals can give you flint and steel when middle-mouse clicked. The reason why this is so complicated is because flint and steel is not the only way to start a fire in Minecraft, so if the game cannot find flint and steel in your inventory but it _can_ find a fire charge, it will give that to you instead!
+#### Water & Lava
+Ever since this mod released, I have wanted to add this feature! If you're aiming your crosshair at a liquid without selecting a block behind it, you will be given the bucket that corresponds to the liquid--a water bucket for water, and a lava bucket for lava.  
+#### Fire & Portals
+Fire and portals can give you flint and steel when middle-mouse clicked. The reason why this is so complicated is because flint and steel is not the only way to start a fire in Minecraft, so if the game cannot find flint and steel in your inventory but it _can_ find a fire charge, it will give that to you instead!
 
 If you have neither flint and steel nor a fire charge in your creative mode inventory, you will be given a fully repaired flint and steel.
 <details>
